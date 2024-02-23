@@ -24,4 +24,3 @@ urlpatterns = [
     path("apis/v1/",include('apis.urls')),
     path('', RedirectView.as_view(url='/apis/v1/')),
 ]
-freierirefnvr$fnri
