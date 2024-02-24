@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: mysql:latest  # Use MySQL image
+    environment:
+      MYSQL_DATABASE: todo_project  # Database name
+      MYSQL_USER: rhythm  # Database user
+      MYSQL_PASSWORD: todoproject  # Database password
+      MYSQL_ROOT_PASSWORD: password  # Root password for MySQL
+    volumes:
+      - mysql_data:/var/lib/mysql/  # Volume for MySQL data persistence
+
+volumes:
+  mysql_data:
