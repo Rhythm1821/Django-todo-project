@@ -4,6 +4,6 @@ gunicorn
 dj-database-url
 psycopg2-binary
 # whitenoise
-'whitenoise[brotli]'
+whitenoise[brotli]
 gunicorn
 uvicorn
